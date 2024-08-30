@@ -123,8 +123,8 @@ class _EditNoteState extends State<EditNote> {
     var mDesc = descController.text.toString();
 
     widget.isUpdate ?
-    context.read<NoteBloc>().add(NotesUpdateEvent(updateNote: NoteModel(title: mTitle, desc: mDesc), s_no: widget.updateNote!.s_no!))
-        : context.read<NoteBloc>().add(NotesAddEvent(newNotes: NoteModel(title: mTitle, desc: mDesc)));
+    context.read<NoteBloc>().add(NotesUpdateEvent(updateNote: NoteModel(title: mTitle, desc: mDesc, user_id: 0), s_no: widget.updateNote!.s_no!))
+        : context.read<NoteBloc>().add(NotesAddEvent(newNotes: NoteModel(title: mTitle, desc: mDesc,user_id: 0)));
   }
 
 }
